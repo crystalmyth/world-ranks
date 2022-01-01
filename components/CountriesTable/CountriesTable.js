@@ -57,7 +57,7 @@ const CountriesTable = ({countries}) => {
     }
 
     const orderedCountries = orderBy(countries, value, direction);
-    console.log(orderedCountries);
+    // console.log(orderedCountries);
     return (
         <div>
             <div className={styles.heading}>
