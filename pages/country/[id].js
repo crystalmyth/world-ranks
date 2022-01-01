@@ -25,12 +25,15 @@ const Country = ({country}) => {
     // },[])
 
     console.log(borders);
+    const myLoader = ({src}) => {
+        return `${src}`;
+    }
 
     return (<Layout title={country.name}>
         <div className={styles.container}>
             <div className={styles.container_left}>
                 <div className={styles.overview_panel}>
-                    <Image src={country.flag} alt={country.name}/>
+                    <Image loader={myLoader} src={country.flag} alt={country.name} layout="fill"/>
                     <h1 className={styles.overview_name}>{country.name}</h1>
                     <div className={styles.overview_region}>{country.region}</div>
                     <div className={styles.overview_numbers} >
@@ -77,7 +80,7 @@ const Country = ({country}) => {
                     <div className={styles.details_panel_borders_label}>Neigbouring Countries</div>
                         <div className={styles.details_panel_borders_container}>
                             {borders.map(({flag, name}) => <div className={styles.details_panel_borders_country} key={name}>
-                                <Image src={flag} alt={name} />
+                                <Image loader={myLoader} src={flag} alt={name} layout="fill" />
                                 <div className={styles.details_panel_borders_name}>{name}</div>
                             </div>)}
                         </div>

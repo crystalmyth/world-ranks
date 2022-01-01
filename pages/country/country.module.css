@@ -8,6 +8,7 @@
     border-radius: 8px;
     box-shadow: var(--box-shadow);
     background-color: var(--background-color-light);
+    position: relative;
 }
 .overview_name{
     text-align: center;
@@ -74,6 +75,7 @@
 
 .details_panel_borders_country{
     text-align: center;
+    position: relative;
 }
 
 .details_panel_borders_label{

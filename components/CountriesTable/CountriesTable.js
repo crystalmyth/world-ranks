@@ -57,7 +57,10 @@ const CountriesTable = ({countries}) => {
     }
 
     const orderedCountries = orderBy(countries, value, direction);
-    // console.log(orderedCountries);
+    console.log(orderedCountries);
+    const myLoader = ({src}) => {
+        return `${src}`;
+    }
     return (
         <div>
             <div className={styles.heading}>
@@ -90,7 +93,7 @@ const CountriesTable = ({countries}) => {
             {orderedCountries.map((country) => <Link href={`/country/${country.alpha3Code}`} key={country.name} passHref>
                     <div className={styles.row}>
                         <div className={styles.flag}>
-                            <Image src={country.flag} alt={country.name} />
+                            <Image loader={myLoader} src={country.flag} alt={country.name} layout="fill" />
                         </div>
                         <div className={styles.name}>{country.name}</div>
                         <div className={styles.population}>{country.population}</div>
