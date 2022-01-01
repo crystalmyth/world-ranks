@@ -1,4 +1,4 @@
-import styles from './Country.module.css'
+import styles from './country.module.css'
 import Layout from '../../components/Layout/Layout'
 import { useState } from 'react';
 import Image from 'next/image'
