@@ -3,6 +3,8 @@ import styles from './CountriesTable.module.css'
 import KeyboardArrowDownRounded from '@material-ui/icons/KeyboardArrowDownRounded'
 import KeyboardArrowUpRounded from '@material-ui/icons/KeyboardArrowUpRounded'
 import Link from 'next/link';
+import Image from 'next/image'
+
 const orderBy = (countries, value, direction) => {
     if(direction === 'asc'){
         return [...countries].sort((a,b) => a[value] > b[value] ? 1 : -1)
@@ -88,7 +90,7 @@ const CountriesTable = ({countries}) => {
             {orderedCountries.map((country) => <Link href={`/country/${country.alpha3Code}`} key={country.name}>
                     <div className={styles.row}>
                         <div className={styles.flag}>
-                            <img src={country.flag} alt={country.name} />
+                            <Image src={country.flag} alt={country.name} />
                         </div>
                         <div className={styles.name}>{country.name}</div>
                         <div className={styles.population}>{country.population}</div>
